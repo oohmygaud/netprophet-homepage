@@ -4,4 +4,5 @@ export default {
   light_blue: '#85a6bb',
   brown: '#91604d',
   dark_blue: '#423e53',
+  yellow: '#ffc857'
 }

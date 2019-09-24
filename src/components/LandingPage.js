@@ -10,7 +10,7 @@ class ColorCard extends React.Component {
     show: false,
   }
 
-  showTitle() {
+  showCoverView() {
     if (this.props.image)
       return <div style={{
         background: `url(${this.props.image}) no-repeat center`,
@@ -24,13 +24,12 @@ class ColorCard extends React.Component {
   render() {
     return <Card style={{
       backgroundColor: this.props.color,
-      height: '12em',
-      marginTop: '1.5em',
+      height: '13em',
     }}
       onMouseEnter={() => this.setState({ show: true })}
       onMouseLeave={() => this.setState({ show: false })}
     >
-      {this.state.show ? <div style={{ padding: '2em', color: 'white' }}>{this.props.children}</div> : this.showTitle()}
+      {this.state.show ? <div style={{ padding: '1em', color: 'white' }}>{this.props.children}</div> : this.showCoverView()}
     </Card>
   }
 }
@@ -79,7 +78,7 @@ class LandingPage extends React.Component {
       <div style={heroStyle} className="hero-text">
         <Grid container justify='center'>
           <Grid item xs={10} md={8} style={{ padding: '2em' }}>
-            <h1>Beyond Full-Stack Consulting</h1>
+            <h1 style={{fontSize: '3em'}}>Beyond Full-Stack Consulting</h1>
 
 
             <div className="hero-text">
@@ -100,41 +99,41 @@ class LandingPage extends React.Component {
           </Grid>
         </Grid>
       </div>
-      <BannerDiv color='#d1d1d0'>
+      <BannerDiv color={palette.yellow}>
         <center><h1>Our Services</h1></center>
-        <Grid container spacing={3} justify='center'>
-          <Grid item md={3} xs={6}>
-            <Card style={{ textAlign: 'center', height: '15em', padding: '1em' }}>
-              <h2>Marketing</h2>
-              <h4>Growth-hacking, Landing Page Optimization, Ad Campaigns<br /><br />
-                  Drive Traffic, Capture Leads, Build Relationships, Generate Sales<br /><br />
-                  Build a Brand Identity, Measure Focus Groups, Leave your Mark!</h4>
+        <Grid container spacing={3} justify='center' style={{fontSize: '0.95em'}}>
+          <Grid item md={4} xs={6}>
+            <Card style={{minHeight: '15em', padding: '1em 2em', borderTop: 'green 0.5em solid'}}>
+              <h2 style={{ textAlign: 'center', marginTop: '0em' }}>Marketing</h2>
+              <li>Growth-hacking, Landing Page Optimization, Ad Campaigns</li><br />
+              <li>Drive Traffic, Capture Leads, Build Relationships, Generate Sales</li><br />
+              <li>Build a Brand Identity, Measure Focus Groups, Leave your Mark!</li>
             </Card>
           </Grid>
-          <Grid item md={3} xs={6}>
-            <Card style={{ textAlign: 'center', height: '15em', padding: '1em' }}>
-              <h2>Development</h2>
-              <h4>Any stack -- Front-end, Back-end, Mobile, Wearable, Embedded<br /><br />
-                  Python, Ruby, PHP, Java or JS, .Net, rPI or Arduino, SQL or NoSQL, Docker<br /><br />
-                  UX, Unit Testing, Performance Tuning, Big Data, Machine Learning</h4>
+          <Grid item md={4} xs={6}>
+            <Card style={{ minHeight: '15em', padding: '1em 2em', borderTop: 'blue 0.5em solid'}}>
+              <h2 style={{ textAlign: 'center', marginTop: '0em' }}>Development</h2>
+              <li>Any stack -- Front-end, Back-end, Mobile, Wearable, Embedded</li><br />
+              <li>Python, Ruby, PHP, Java or JS, .Net, rPI or Arduino, SQL or NoSQL, Docker</li><br />
+              <li>UX, Unit Testing, Performance Tuning, Big Data, Machine Learning</li>
             </Card>
           </Grid>
-          <Grid item md={3} xs={12}>
-            <Card style={{ textAlign: 'center', height: '15em', padding: '1em' }}>
-              <h2>Operations</h2>
-              <h4>Next-Gen Platforms for 2016: Focus on your Business, Not Servers<br /><br />
-                  High-Availability, Auto-Scaling, Capacity Planning and Monitoring<br /><br />
-                  Bare-Metal, Virtualization or Containers, all with Dev-Parity</h4>
+          <Grid item md={4} xs={12}>
+            <Card style={{ minHeight: '15em', padding: '1em 2em', borderTop: 'red 0.5em solid'}}>
+              <h2 style={{ textAlign: 'center', marginTop: '0em' }}>Operations</h2>
+              <li>Next-Gen Platforms for 2016: Focus on your Business, Not Servers</li><br />
+              <li>High-Availability, Auto-Scaling, Capacity Planning and Monitoring</li><br />
+              <li>Bare-Metal, Virtualization or Containers, all with Dev-Parity</li>
             </Card>
           </Grid>
         </Grid>
       </BannerDiv>
-      <BannerDiv>
+      <BannerDiv style={{ border: '1px solid rgba(0,0,0,0.3)', borderLeft: 'none', borderRight: 'none' }}>
         <center><h1>Our Work</h1></center>
         <Grid container justify='center' spacing={2}>
-          <Grid item xs={10} sm={3}>
-            <ColorCard color='#495b66' image='/payweilogo1.svg'>
-              <h4>Send invoices and recieve payments in any cryptocurrency of your choosing</h4>
+          <Grid item xs={10} sm={5} lg={3}>
+            <ColorCard color='#6d6a75' image='/payweilogo1.svg'>
+              <h3>Send invoices and manage your money using the Ethereum Network</h3>
               <Link to='www.paywei.co'>
                 <Button variant="contained" color='primary'>
                   paywei.co
@@ -142,9 +141,9 @@ class LandingPage extends React.Component {
               </Link>
             </ColorCard>
           </Grid>
-          <Grid item xs={10} sm={7}>
-            <ColorCard color='#8cbc60' image='/txgunlogoH.svg'>
-              <h4>Receive notifications and webhooks for transactions on the blockchain</h4>
+          <Grid item xs={10} sm={7} lg={5}>
+            <ColorCard color='#26547c' image='/txgunlogoH.svg'>
+              <h3>Receive notifications and webhooks for Ethereum Network transactions, without installing web3</h3>
               <Link to='www.txgun.io'>
                 <Button variant='contained' color='secondary'>
                   txgun.io
@@ -152,34 +151,36 @@ class LandingPage extends React.Component {
               </Link>
             </ColorCard>
           </Grid>
-          <Grid item xs={10} sm={6}>
-            <ColorCard color='#d2bb60' image='/annex3.svg'>
-              <h4>Receive notifications and webhooks for transactions on the blockchain</h4>
-              <Link to='a.nnex.io'>
+          <Grid item xs={10} sm={7} lg={4}>
+            <ColorCard color='#EC7241' image='/shipchain-logo-outline.svg'>
+              <h3>The Logistics Industry Blockchain: Trustless, Transparent Tracking for Real World Assets.</h3>
+              <Link to='ShipChain.io'>
                 <Button variant='contained' color='secondary'>
-                  a.nnex.io
+                  ShipChain.io
                 </Button>
               </Link>
             </ColorCard>
           </Grid>
-          <Grid item xs={10} sm={4}>
-            <ColorCard color='#8ecfc5'image='/shipchain-logo-outline.svg'>
-            <h4>Receive notifications and webhooks for transactions on the blockchain</h4>
-            <Link to='shipchain.io'>
+          <Grid item xs={10} sm={5} lg={5}>
+            <ColorCard color='#2e4052' image='/annex3.svg'>
+              <h3>High volume DSP/RTB and clickfraud blocker for the modern internet advertiser</h3>
+              <h5>(decomissioned)</h5>
+            </ColorCard>
+          </Grid>
+          <Grid item xs={10} sm={6} lg={4}>
+            <ColorCard color='#628395' image='/openscale.png'>
+              <h3>Swiss Foundation for Open Governance of ShipChain Network Blockchain and the OpenSCALE standards format</h3>
+              <h5>(pending)</h5>
+            </ColorCard>
+          </Grid>
+          <Grid item xs={10} sm={6} lg={3}>
+            <ColorCard color='#61210f' image='/traffic-haus.jpg'>
+              <h3>Online Advertising Platform serving 1 billion daily visitors in under 7ms each</h3>
+              <Link to='traffichaus.com'>
                 <Button variant='contained' color='secondary'>
-                  shipchain.io
+                  traffichaus.com
                 </Button>
               </Link>
-            </ColorCard>
-          </Grid>
-          <Grid item xs={10} sm={5}>
-            <ColorCard color='#6f8f5b'>
-              <h3>openScale</h3>
-            </ColorCard>
-          </Grid>
-          <Grid item xs={10} sm={5}>
-            <ColorCard color='#a78d22'>
-              <h3>shipChain</h3>
             </ColorCard>
           </Grid>
         </Grid>
