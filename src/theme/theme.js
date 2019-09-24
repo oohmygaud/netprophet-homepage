@@ -6,13 +6,13 @@ export const theme = createMuiTheme({
 
     type: 'light',
     primary: {
-      main: palette.light_purple // customise your main color here
+      main: palette.light_orange // customise your main color here
     },
-    secondary: { main: palette.green },
+    secondary: { main: palette.light_blue },
 
     error: { main: '#ca0909' },
 
-    sand: { main: '#F4DECB' },
+    sand: { main: palette.brown },
     shell: { main: '#F8EEE7' },
     status: {
       danger: '#b71c1c'

@@ -1,6 +1,7 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import { connect } from 'react-redux'
+import palette from '../theme/palette'
 import Drawer from '@material-ui/core/Drawer'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -65,8 +66,10 @@ handleClose = event => {
          <AppBar position="static">
            <Toolbar>
              <span color="inherit" className="headertypoclass">
-               <Link to='/'><img src={'txgunlogoH.svg'} style={{ marginTop: 4, maxWidth: '80%', maxHeight: '60px' }}/></Link>
+               <img src={'NPlogo.svg'} style={{ marginTop: 4, maxWidth: '120px', maxHeight: '48px' }}/>
+               
              </span>
+             <h3>NetProphet Technologies</h3>
 
              <IconButton className="iconbuttonsyle" color="inherit" aria-label="Menu" onClick={this.onLeftIconButtonClick}>
                <MenuIcon />

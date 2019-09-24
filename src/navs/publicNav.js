@@ -12,19 +12,10 @@ import { NavLink } from 'react-router-dom'
 export const publicNavs = [
   {
     url: '/',
-    name: 'Home',
+    name: 'Our Work',
     icon: <HomeIcon/>
   },
-  {
-    url: '/registration',
-    name: 'Register',
-    icon: <FaceIcon/>
-  },
-  {
-    url: '/learn_more',
-    name: 'Learn More',
-    icon: <DescriptionIcon/>
-  }
+  
   // add new Nav links here as a json object, in this file the public navigations
 ]
 

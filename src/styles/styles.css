@@ -290,12 +290,11 @@ body, html {
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: stretch;
     position: relative;
 }
   
 /* Place text in the middle of the image */
 .hero-text {
-    text-align: center;
     color: white;
 }
