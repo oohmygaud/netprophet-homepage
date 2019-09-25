@@ -12,8 +12,11 @@ build site:
 
 
 deploy:
-   image: python:3
+   image:
+     name: robpco/awscli
+     entrypoint:
+       - '/usr/bin/env'
+       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
    stage: deploy
    script:
-     - pip install aws-cli
      - aws s3 sync --acl public-read ./public s3://netprophet.tech
