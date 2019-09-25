@@ -9,7 +9,7 @@ const Footer = () => {
    }}
    className="footer-container-box">
       <h2>
-        NetProphet Technologies
+        &copy; NetProphet Technologies 2019, All Rights Reserved
       </h2>
     </div>
 }

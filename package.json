@@ -6,9 +6,9 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack.dev.js --port 11111",
-    "sync": "aws s3 sync --acl public-read public/ s3://txgun.io",
+    "sync": "aws s3 sync --acl public-read public/ s3://netprophet.tech",
     "invalidate": "aws cloudfront create-invalidation --distribution-id EL0A14GZ0RF4B --paths='/*'",
-    "deploy": "npm run build && npm run sync && npm run invalidate"
+    "deploy": "npm run build && npm run sync"
   },
   "author": "jishnu koottala",
   "license": "MIT",
