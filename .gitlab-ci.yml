@@ -12,7 +12,7 @@ build site:
 
 
 deploy:
-   image: mesosphere/aws-cli:latest
+   image: atlassian/pipelines-awscli:latest
    stage: deploy
    script:
       - s3 sync --acl public-read ./public s3://netprophet.tech
