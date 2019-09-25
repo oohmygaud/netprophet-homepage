@@ -12,7 +12,8 @@ build site:
 
 
 deploy:
-   image: atlassian/pipelines-awscli:latest
+   image: python:3
    stage: deploy
    script:
-      - s3 sync --acl public-read ./public s3://netprophet.tech
+     - pip install aws-cli
+     - aws s3 sync --acl public-read ./public s3://netprophet.tech
