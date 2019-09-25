@@ -11,8 +11,7 @@ build site:
 
 
 deploy:
-   image: python:latest
+   image: mesosphere/aws-cli:latest
    stage: deploy
    script:
-      - pip install awscli
       - aws s3 sync --acl public-read ./public s3://netprophet.tech
