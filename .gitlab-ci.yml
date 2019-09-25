@@ -14,4 +14,4 @@ deploy:
    image: mesosphere/aws-cli:latest
    stage: deploy
    script:
-      - aws s3 sync --acl public-read ./public s3://netprophet.tech
+      - s3 sync --acl public-read ./public s3://netprophet.tech
