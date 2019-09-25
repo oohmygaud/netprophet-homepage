@@ -2,8 +2,9 @@ build site:
   image: node:10
   stage: build
   script:
-    - npm install --progress=false
-    - npm run build
+    - yarn config set cache-folder /cache/yarn
+    - yarn install
+    - yarn build
   artifacts:
     expire_in: 1 week
     paths:
