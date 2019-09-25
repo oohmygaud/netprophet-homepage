@@ -47,8 +47,7 @@ handleClose = event => {
 
  render () {
    return (
-     <div>
-
+     /*
        <Drawer open={this.state.open} onClose={this.toggleDrawer(false)} anchor="right" >
          <div
            tabIndex={0}
@@ -60,6 +59,12 @@ handleClose = event => {
            </div>
          </div>
        </Drawer>
+             <IconButton className="iconbuttonsyle" color="inherit" aria-label="Menu" onClick={this.onLeftIconButtonClick}>
+               <MenuIcon />
+             </IconButton>
+       
+       */
+       <div>
 
        <div className="appbarwrapper">
 
@@ -71,9 +76,6 @@ handleClose = event => {
              </span>
              <h3>NetProphet Technologies</h3>
 
-             <IconButton className="iconbuttonsyle" color="inherit" aria-label="Menu" onClick={this.onLeftIconButtonClick}>
-               <MenuIcon />
-             </IconButton>
            </Toolbar>
          </AppBar>
        </div>

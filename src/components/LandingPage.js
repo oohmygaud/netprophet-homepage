@@ -89,6 +89,7 @@ class LandingPage extends React.Component {
                 <br />Automation + Workforce Optimization
                 <br />Established 2008
               </p>
+	<a href="mailto:sales@netprophet.tech">
               <Button
                 variant="contained"
                 color="secondary"
@@ -96,6 +97,7 @@ class LandingPage extends React.Component {
               >
                 Contact Us
                 </Button>
+		  </a>
             </div>
           </Grid>
         </Grid>
