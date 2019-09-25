@@ -9,6 +9,7 @@ build site:
     paths:
       - public
 
+
 deploy:
    image: python:latest
    stage: deploy
