@@ -85,8 +85,10 @@ class LandingPage extends React.Component {
             <div className="hero-text">
 
               <p style={{ fontSize: 18 }}>
-                Growth-hacking + Marketing Dev-ops
-                <br />Automation + Workforce Optimization
+              Application Development<br />
+              Blockchain + Machine Learning<br />
+              Automation + Dev-ops <br />
+                Growth-hacking + Marketing<br />
                 <br />Established 2008
               </p>
 	<a href="mailto:sales@netprophet.tech">
