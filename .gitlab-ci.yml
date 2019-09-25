@@ -15,4 +15,4 @@ deploy:
    stage: deploy
    script:
       - pip install awscli
-      - aws s3 sync ./public s3://netprophet.tech
+      - aws s3 sync --acl public-read ./public s3://netprophet.tech
