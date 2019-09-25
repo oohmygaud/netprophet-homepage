@@ -15,9 +15,9 @@ class ColorCard extends React.Component {
       return <div style={{
         background: `url(${this.props.image}) no-repeat center`,
         backgroundSize: 'contain',
-        width: '80%',
+        width: '100%',
         height: '10em',
-        margin: '2em', 
+        marginTop: '2em', 
       }} />
     return <h1 style={{ textAlign: 'center' }}>{this.props.title}</h1>
   }
