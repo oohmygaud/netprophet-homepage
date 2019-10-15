@@ -139,31 +139,31 @@ class LandingPage extends React.Component {
           <Grid item xs={10} sm={5} lg={3}>
             <ColorCard color='#6d6a75' image='/payweilogo1.svg.png'>
               <h3>Send invoices and manage your money using the Ethereum Network</h3>
-              <Link to='www.paywei.co'>
+              <a href='http://paywei.co'>
                 <Button variant="contained" color='primary'>
                   paywei.co
                 </Button>
-              </Link>
+              </a>
             </ColorCard>
           </Grid>
           <Grid item xs={10} sm={7} lg={5}>
             <ColorCard color='#26547c' image='/txgunlogoH.svg'>
               <h3>Receive notifications and webhooks for Ethereum Network transactions, without installing web3</h3>
-              <Link to='www.txgun.io'>
+              <a href='http://txgun.io'>
                 <Button variant='contained' color='primary'>
                   txgun.io
                 </Button>
-              </Link>
+              </a>
             </ColorCard>
           </Grid>
           <Grid item xs={10} sm={7} lg={4}>
             <ColorCard color='#EC7241' image='/shipchain-logo-outline.svg'>
               <h3>The Logistics Industry Blockchain: Trustless, Transparent Tracking for Real World Assets.</h3>
-              <Link to='ShipChain.io'>
+              <a href='http://ShipChain.io'>
                 <Button variant='contained' color='primary'>
                   ShipChain.io
                 </Button>
-              </Link>
+              </a>
             </ColorCard>
           </Grid>
           <Grid item xs={10} sm={5} lg={5}>
@@ -181,11 +181,11 @@ class LandingPage extends React.Component {
           <Grid item xs={10} sm={6} lg={3}>
             <ColorCard color='#61210f' image='/traffic-haus.jpg'>
               <h3>Online Advertising Platform serving 1 billion daily visitors in under 7ms each</h3>
-              <Link to='traffichaus.com'>
+              <a href='traffichaus.com'>
                 <Button variant='contained' color='primary'>
                   traffichaus.com
                 </Button>
-              </Link>
+              </a>
             </ColorCard>
           </Grid>
         </Grid>
