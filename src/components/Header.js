@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 import PublicNavList from '../navs/publicNav'
 
 class Header extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       value: 1,
@@ -22,10 +22,10 @@ class Header extends React.Component {
   }
 
   handleChange = (value) => this.setState({ value });
-    onLeftIconButtonClick = () => {
-      console.log('hi;')
-      this.setState({ open: !this.state.open })
-    };
+  onLeftIconButtonClick = () => {
+    console.log('hi;')
+    this.setState({ open: !this.state.open })
+  };
 
   toggleDrawer = (open) => () => {
     this.setState({
@@ -33,55 +33,55 @@ class Header extends React.Component {
     })
   };
 
-  handleClick=() => {
+  handleClick = () => {
     this.setState({ componentsmenuopen: !this.state.componentsmenuopen })
   };
 
-handleClose = event => {
-  if (this.target1.contains(event.target) || this.target2.contains(event.target)) {
-    return
+  handleClose = event => {
+    if (this.target1.contains(event.target) || this.target2.contains(event.target)) {
+      return
+    }
+
+    this.setState({ componentsmenuopen: false })
+  };
+
+  render() {
+    return (
+      /*
+        <Drawer open={this.state.open} onClose={this.toggleDrawer(false)} anchor="right" >
+          <div
+            tabIndex={0}
+            role="button"
+ 
+          >
+            <div className="sidelistwrapper">
+              <React.Fragment><PublicNavList/></React.Fragment>
+            </div>
+          </div>
+        </Drawer>
+              <IconButton className="iconbuttonsyle" color="inherit" aria-label="Menu" onClick={this.onLeftIconButtonClick}>
+                <MenuIcon />
+              </IconButton>
+        
+        */
+      <div>
+
+        <div className="appbarwrapper">
+
+          <AppBar position="static">
+            <Toolbar>
+              <span color="inherit" className="headertypoclass">
+                <img src={'NPlogo.svg'} style={{ marginTop: 4, maxWidth: '120px', maxHeight: '48px' }} />
+
+              </span>
+              <h3>NetProphet Technologies</h3>
+
+            </Toolbar>
+          </AppBar>
+        </div>
+      </div>
+    )
   }
-
-  this.setState({ componentsmenuopen: false })
-};
-
- render () {
-   return (
-     /*
-       <Drawer open={this.state.open} onClose={this.toggleDrawer(false)} anchor="right" >
-         <div
-           tabIndex={0}
-           role="button"
-
-         >
-           <div className="sidelistwrapper">
-             <React.Fragment><PublicNavList/></React.Fragment>
-           </div>
-         </div>
-       </Drawer>
-             <IconButton className="iconbuttonsyle" color="inherit" aria-label="Menu" onClick={this.onLeftIconButtonClick}>
-               <MenuIcon />
-             </IconButton>
-       
-       */
-       <div>
-
-       <div className="appbarwrapper">
-
-         <AppBar position="static">
-           <Toolbar>
-             <span color="inherit" className="headertypoclass">
-               <img src={'NPlogo.svg'} style={{ marginTop: 4, maxWidth: '120px', maxHeight: '48px' }}/>
-               
-             </span>
-             <h3>NetProphet Technologies</h3>
-
-           </Toolbar>
-         </AppBar>
-       </div>
-     </div>
-   )
- }
 }
 
 export default Header;

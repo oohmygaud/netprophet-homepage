@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import palette from '../theme/palette'
 import { Link } from 'react-router-dom'
+import MapChart from './MapChart'
 
 class ColorCard extends React.Component {
   state = {
@@ -65,7 +66,7 @@ class LandingPage extends React.Component {
       textAlign: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      paddingTop: '10vh',
+      paddingTop: '32px',
       /*
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -78,55 +79,56 @@ class LandingPage extends React.Component {
       <br />
       <div style={heroStyle} className="hero-text">
         <Grid container justify='center'>
-          <Grid item xs={12} md={8} style={{ padding: '2em' }}>
-            <h1 style={{fontSize: '3em'}}>Beyond Full-Stack Consulting</h1>
+          <Grid item xs={12} md={8} style={{ padding: '1em' }}>
+              <MapChart zoom={3} center={[-98, 38]} />
+              <MapChart zoom={3} center={[98, 15]} />
 
+            <h1 style={{fontSize: '3em'}}>Beyond Full-Stack Consulting</h1>
 
             <div className="hero-text">
 
               <p style={{ fontSize: 18 }}>
-              Application Development<br />
-              Blockchain + Machine Learning<br />
-              Automation + Dev-ops <br />
-                Growth-hacking + Marketing<br />
-                <br />Established 2008
+                Application Development &bull;
+                Blockchain &bull; Machine Learning<br />
+                Automation &bull; Dev-ops &bull;
+                Growth-hacking &bull; Marketing<br />
+                <small><i>Established 2008</i></small>
               </p>
-	<a href="mailto:sales@netprophet.tech">
-              <Button
-                variant="contained"
-                color="secondary"
-                style={{ marginTop: '2em' }}
-              >
-                Contact Us
+	            <a href="mailto:sales@netprophet.tech">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  style={{ marginTop: '2em' }}
+                >
+                  Contact Us
                 </Button>
-		  </a>
+		          </a>
             </div>
           </Grid>
         </Grid>
       </div>
       <BannerDiv color={palette.yellow}>
-        <center><h1>Our Services</h1></center>
         <Grid container spacing={3} justify='center' style={{fontSize: '0.95em'}}>
           <Grid item sm={6} xs={12} md={4}>
-            <Card style={{minHeight: '15em', padding: '1em 2em', borderTop: 'black 0.5em solid'}}>
-              <h2 style={{ textAlign: 'center', marginTop: '0em' }}>Marketing</h2>
-              <li>Growth-hacking, Landing Page Optimization, Ad Campaigns</li><br />
-              <li>Drive Traffic, Capture Leads, Build Relationships, Generate Sales</li><br />
-              <li>Build a Brand Identity, Measure Focus Groups, Leave your Mark!</li>
-            </Card>
-          </Grid>
-          <Grid item sm={6} xs={12} md={4}>
-            <Card style={{ minHeight: '15em', padding: '1em 2em', borderTop: 'black 0.5em solid'}}>
+            <Card style={{ minHeight: '15em', padding: '1em 2em', borderTop: 'black 1.5em solid'}}>
               <h2 style={{ textAlign: 'center', marginTop: '0em' }}>Development</h2>
               <li>Any stack -- Front-end, Back-end, Mobile, Wearable, Embedded</li><br />
               <li>Python, Ruby, PHP, Java or JS, .Net, rPI or Arduino, SQL or NoSQL, Docker</li><br />
               <li>UX, Unit Testing, Performance Tuning, Big Data, Machine Learning</li>
             </Card>
           </Grid>
+          <Grid item sm={6} xs={12} md={4}>
+            <Card style={{minHeight: '15em', padding: '1em 2em', borderTop: 'black 1.5em solid'}}>
+              <h2 style={{ textAlign: 'center', marginTop: '0em' }}>Marketing</h2>
+              <li>Growth-hacking, Landing Page Optimization, Ad Campaigns</li><br />
+              <li>Drive Traffic, Capture Leads, Build Relationships, Generate Sales</li><br />
+              <li>Build a Brand Identity, Measure Focus Groups, Leave your Mark!</li>
+            </Card>
+          </Grid>
           <Grid item md={4} xs={12}>
-            <Card style={{ minHeight: '15em', padding: '1em 2em', borderTop: 'black 0.5em solid'}}>
+            <Card style={{ minHeight: '15em', padding: '1em 2em', borderTop: 'black 1.5em solid'}}>
               <h2 style={{ textAlign: 'center', marginTop: '0em' }}>Operations</h2>
-              <li>Next-Gen Platforms for 2016: Focus on your Business, Not Servers</li><br />
+              <li>Next-Gen Platforms for 2020: Focus on your Business, Not Servers</li><br />
               <li>High-Availability, Auto-Scaling, Capacity Planning and Monitoring</li><br />
               <li>Bare-Metal, Virtualization or Containers, all with Dev-Parity</li>
             </Card>
