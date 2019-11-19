@@ -183,7 +183,7 @@ class LandingPage extends React.Component {
           <Grid item xs={10} sm={6} lg={3}>
             <ColorCard color='#61210f' image='/traffic-haus.jpg'>
               <h3>Online Advertising Platform serving 1 billion daily visitors in under 7ms each</h3>
-              <a href='traffichaus.com'>
+              <a href='http://traffichaus.com'>
                 <Button variant='contained' color='primary'>
                   traffichaus.com
                 </Button>

@@ -7,8 +7,8 @@
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack.dev.js --port 11111",
     "sync": "aws s3 sync --acl public-read public/ s3://netprophet.tech",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id EL0A14GZ0RF4B --paths='/*'",
-    "deploy": "npm run build && npm run sync"
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E3C1DDIEZKTPQX --paths='/*'",
+    "deploy": "yarn build && yarn sync && yarn invalidate"
   },
   "author": "jishnu koottala",
   "license": "MIT",
