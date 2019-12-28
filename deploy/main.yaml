@@ -51,3 +51,47 @@ spec:
         - name: $PROJECT
           containerPort: 80
           protocol: TCP
+---
+
+# Source: gitlab/charts/gitlab/charts/unicorn/templates/ingress.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: $PROJECT-https
+  labels:
+    app: $PROJECT
+
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`homepage.netprophet.tech`)
+    kind: Rule
+    priority: 1
+    services:
+    - name: $PROJECT
+      port: 80
+  tls:
+    certResolver: default
+---
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: $PROJECT-http
+  labels:
+    app: $PROJECT
+
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`homepage.netprophet.tech`)
+    kind: Rule
+    middlewares:
+      - name: https-only
+        namespace: default
+    services:
+    - name: $PROJECT
+      port: 80
+
