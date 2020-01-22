@@ -20,3 +20,4 @@ deploy:
    stage: deploy
    script:
      - aws s3 sync --acl public-read ./public s3://netprophet.tech
+     - aws cloudfront create-invalidation --distribution-id E3C1DDIEZKTPQX --paths='/'
