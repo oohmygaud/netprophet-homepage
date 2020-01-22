@@ -12,7 +12,6 @@ const geoUrl =
 
 const markers = [
   { markerOffset: 15, name: "San Diego", coordinates: [-117.1611, 32.7157] },
-  { markerOffset: 15, name: "Greenville", coordinates: [-82.3940, 34.8526] },
   { markerOffset: 15, name: "Ho Chi Minh City", coordinates: [106.6297, 10.8231] },
 ];
 
