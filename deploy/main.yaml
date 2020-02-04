@@ -52,46 +52,33 @@ spec:
           containerPort: 80
           protocol: TCP
 ---
-
 # Source: gitlab/charts/gitlab/charts/unicorn/templates/ingress.yaml
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: $PROJECT-https
-  labels:
-    app: $PROJECT
-
-spec:
-  entryPoints:
-    - websecure
-  routes:
-  - match: Host(`homepage.netprophet.tech`)
-    kind: Rule
-    priority: 1
-    services:
-    - name: $PROJECT
-      port: 80
-  tls:
-    certResolver: default
----
-
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: extensions/v1beta1
+kind: Ingress
 metadata:
   name: $PROJECT-http
   labels:
     app: $PROJECT
-
+    
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "512m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "15"
+    
 spec:
-  entryPoints:
-    - web
-  routes:
-  - match: Host(`homepage.netprophet.tech`)
-    kind: Rule
-    middlewares:
-      - name: https-only
-        namespace: default
-    services:
-    - name: $PROJECT
-      port: 80
+  rules:
+    - host: homepage.netprophet.tech
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: $PROJECT
+              servicePort: 80
+  tls:
+    - hosts:
+      - homepage.netprophet.tech
+      secretName: homepage-netprophet-tls
+
 
