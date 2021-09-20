@@ -33,7 +33,7 @@
     "fusioncharts": "^3.12.2",
     "material-ui-image": "^3.0.0",
     "moment": "^2.24.0",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
     "qrcode.react": "^0.9.3",
     "react": "^16.8.0",
